@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #root{
+      width: 100px;
+      height: 100px;
+      background-color: cadetblue;
+    }
+  </style>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="module">
+      const root = document.getElementById("root");
+      console.dir(root.style);
+
+      root.style.width ="100px";
+      root.style.height="100px";
+      root.style.backgroundColor="cadeblue"
+
+      console.dir(root.style);
+      
+      const dom =[];
+      
+        for(let i =0; i<5; i++){
+          dom.push(`<li>"item-${i+1}"</li>`);
+        }
+        root.innerHTML = dom.join('');
+        dom.unshift("<ul>");
+        dom.push("</ul>");
+
+        
+      console.log(dom);
+      root.innerHTML=dom.join('');
+
+    </script>
+</body>
+</html>
